@@ -7,7 +7,6 @@ with open('malData.json') as f:
     jsonData = json.load(f)
 
 data = pd.read_json('malData.json')
-data['num'] = numpy.arange(len(data))
 print(data)
 ax = plt.gca()
 
