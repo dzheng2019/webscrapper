@@ -2,12 +2,14 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
-url = 'https://www.reddit.com/r/Overwatch/'
+url = 'https://myanimelist.net/topanime.php?limit=00'
 response = requests.get(url, timeout=300)
 content = BeautifulSoup(response.content, "html.parser")
 tweetArr = []
 
 print(content)
+
+
 
 # for tweet in content.find_all('div', attrs={"class": "tweetcontainer"}):
 #     tweetObject = {
