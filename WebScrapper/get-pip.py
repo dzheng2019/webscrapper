@@ -126,6 +126,7 @@ def bootstrap(tmpdir=None):
             implicit_wheel = False
         except ImportError:
             pass
+
     # We want to support people passing things like 'pip<8' to get-pip.py which
     # will let them install a specific version. However because of the dreaded
     # DoubleRequirement error if any of the args look like they might be a
