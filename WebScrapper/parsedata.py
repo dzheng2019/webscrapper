@@ -1,14 +1,16 @@
 from pprint import pprint
 import json
+import matplotlib.pyplot as plt
+import pandas as pd
 
 with open('malData.json') as f:
     jsonData = json.load(f)
 
-count = 0
-total = 0
-for i in jsonData:
-    total += 1
-    if  float(i['score']) >= 9.0:
-        count += 1;
+data = pd.read_json('malData.json')
+data['num'] = numpy.arange(len(data))
+print(data)
+ax = plt.gca()
 
-print (count)
+data.plot(kind='line',x= 'num',y='score',color='red',ax=ax)
+
+plt.show()
