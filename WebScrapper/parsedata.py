@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-data = pd.read_json('malData.json')
+data = pd.read_json('malMData.json')
 print(data)
 ax = plt.gca()
 
