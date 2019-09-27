@@ -4,14 +4,15 @@ import json
 # tutorial-env\Scripts\activate.bat
 
 url = 'https://myanimelist.net/topanime.php?limit='
-response = requests.get(url, timeout=300)
+response = requests.get(url, timeout=30)
 content = BeautifulSoup(response.content, "html.parser")
 listArr = []
 
 count=1
-for x in range(0,101):
+
+for x in range(4,8):
     url = 'https://myanimelist.net/topanime.php?limit=' + str((x*50))
-    response = requests.get(url, timeout=300)
+    response = requests.get(url, timeout=30)
     content = BeautifulSoup(response.content, "html.parser")
     for listing in content.find_all('tr', attrs={"class": "ranking-list"}):
         listObject = {
@@ -22,5 +23,6 @@ for x in range(0,101):
         listArr.append(listObject)
         count+=1
 
-with open('malData.json', 'w') as outfile:
+
+with open('datafiles/malData2.json', 'w') as outfile:
     json.dump(listArr, outfile)

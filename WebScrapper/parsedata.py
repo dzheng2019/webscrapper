@@ -3,10 +3,8 @@ import json
 import matplotlib.pyplot as plt
 import pandas as pd
 
-with open('malData.json') as f:
-    jsonData = json.load(f)
 
-data = pd.read_json('malData.json')
+data = pd.read_json('datafiles/malData1.json')
 print(data)
 ax = plt.gca()
 
